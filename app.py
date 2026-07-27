@@ -13,7 +13,7 @@ ALL_TICKERS = ['CADTHB=X', 'USDTHB=X', 'EURTHB=X', 'USDCAD=X', 'EURCAD=X', 'CADU
                      '^IXIC', '^NDX', 'QQQ', 'QQQM', # NASDAQ
                      '^DJI', # DOW JONES
                      'VT', 'VTI', 'VGT', 'VYM', # VANGUARD
-                     'BLK', # BLACKROCK
+                     'BLK', 'BX' # BLACKROCK-BLACKSTONE
                      'LMT', 'NOC', 'GD', 'CAE', # DEFENSE
                      'XOM', 'CVX', 'COP', 'SHEL', 'BP', 'CNQ', # ENERGY
                      'CAT', 'GE', 'BA', 'ETN', 'UNP', # INDUSTRIAL
@@ -80,7 +80,7 @@ app_ui = ui.page_fluid(
                     - **NASDAQ** : '^IXIC', '^NDX', <span style='color: blue;'>**'QQQ'**</span>, 'QQQM' <span style='color: teal;'>----- (IXIC nasdaq composite, NDX nasdaq 100, QQQ & QQQM track NDX)</span>
                     - **DOWJONES** : '^DJI' <span style='color: teal;'>----- (30 US major financial performance publicly traded companies)</span>
                     - **VANGUARD** : <span style='color: blue;'>**'VT'**</span>, 'VTI', 'VGT', 'VYM' <span style='color: teal;'>----- (VT world, VTI usa, VGT tech, VYM income-focused investors tracks usa companies paying above-average dividends)</span>
-                    - **BLACKROCK** : 'BLK'
+                    - **BLACK** : 'BLK', 'BX' <span style='color: teal;'>----- (BLK BlackRock, BX BlackStone)</span>
                     - **DEFENSE** : 'LMT', 'NOC', 'GD', 'CAE' <span style='color: teal;'>----- (LMT LockheedMartin, NOC NorthropGrumman, GD GeneralDynamics, CAE Canadian)</span>
                     - **ENERGY** : 'XOM', 'CVX', 'COP', 'SHEL', 'BP', 'CNQ' <span style='color: teal;'>----- (XOM ExxonMobil, CVX Chevron, COP ConocoPhillips, SHEL Shell, BP BritishPetroleum, CNQ CanadianNaturalResources)</span>
                     - **INDUSTRIAL** : <span style='color: blue;'>**'CAT'**</span>, 'GE', 'BA', 'ETN', 'UNP' <span style='color: teal;'>----- (CAT Caterpillar, GE Aerospace, BA Boeing, ETN Eaton, UNP UnionPacific)</span>
@@ -179,7 +179,7 @@ def server(input, output, session):
         elif option == "option2": # 2.Fiat CAD
             ui.update_checkbox_group("group_tickers", selected=['USDCAD=X', 'EURCAD=X', 'CADUSD=X', 'CADEUR=X'])
         elif option == "option3": # 3.ETF
-            ui.update_checkbox_group("group_tickers", selected=["GLD", "SPY", "QQQ", "VT", "BLK"])
+            ui.update_checkbox_group("group_tickers", selected=["GLD", "SPY", "QQQ", "VT", "BLK", "BX"])
         elif option == "option4": # 4.Tech
             ui.update_checkbox_group("group_tickers", selected=['TSLA', 'NVDA', 'GOOGL', 'AAPL', 'META', 'AMZN', 'MSFT', 'TSM', 'MRVL', 'PLTR'])
         elif option == "option5": # 5.Retail
