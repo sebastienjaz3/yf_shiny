@@ -53,14 +53,14 @@ app_ui = ui.page_fluid(
                 "radio_options", 
                 ui.tags.b("Preset"), 
                 choices={
-                    "option1": "1.Preferred (blue)",
+                    "option1": "1.Preferred/Blue",
                     "option2": "2.Fiat CAD",
                     "option3": "3.Tech",
                     "option4": "4.ETF",
                     "option5": "5.Retail",
                     "option6": "6.Bank",
-                    "option7": "7.% Delta Grow",
-                    "option8": "8.% Delta Drop",
+                    "option7": "7.Delta Grow",
+                    "option8": "8.Delta Drop",
                     "option9": "9.None"
                 },
                 selected="option1"),
@@ -76,9 +76,9 @@ app_ui = ui.page_fluid(
                     - **FIAT** : 'CADTHB=X', 'USDTHB=X', 'EURTHB=X', 'USDCAD=X', 'EURCAD=X', 'CADUSD=X', 'CADEUR=X'
                     - **CRYPTO** : 'BTC-USD', 'ETH-USD', 'XRP-USD'
                     - **GOLD** : 'GC=F', <span style='color: blue;'>**'GLD'**</span>, 'IAU', 'BHP', 'RIO' <span style='color: teal;'>----- (GC=F most widely tracked global benchmark for gold, GLD most actively traded gold ETF globally, IAU lower-cost alternative to GLD, BHP largest mining company, RIO australian global)</span>
-                    - **S&P500** : '^GSPC', '^SPX', <span style='color: blue;'>**'SPY'**</span>, 'IVV', 'VOO' <span style='color: teal;'>----- (GSPC & SPX are index non-tradable / cannot buy, SPY [most traded] & IVV & VOO [low expense ratio] are exchange traded funds / ETFs)</span>
+                    - **S&P500** : '^GSPC', '^SPX', <span style='color: blue;'>**'SPY'**</span>, 'IVV', 'VOO' <span style='color: teal;'>----- (GSPC & SPX are index non-tradable [cannot buy], SPY [most traded] & IVV & VOO [low expense ratio] are exchange traded funds [ETFs])</span>
                     - **NASDAQ** : '^IXIC', '^NDX', <span style='color: blue;'>**'QQQ'**</span>, 'QQQM' <span style='color: teal;'>----- (IXIC nasdaq composite, NDX nasdaq 100, QQQ & QQQM track NDX)</span>
-                    - **DOWJONES** : '^DJI' <span style='color: teal;'>----- (30 usa major financial performance publicly traded companies)</span>
+                    - **DOWJONES** : '^DJI' <span style='color: teal;'>----- (30 US major financial performance publicly traded companies)</span>
                     - **VANGUARD** : <span style='color: blue;'>**'VT'**</span>, 'VTI', 'VGT', 'VYM' <span style='color: teal;'>----- (VT world, VTI usa, VGT tech, VYM income-focused investors tracks usa companies paying above-average dividends)</span>
                     - **BLACKROCK** : 'BLK'
                     - **DEFENSE** : 'LMT', 'NOC', 'GD', 'CAE' <span style='color: teal;'>----- (LMT LockheedMartin, NOC NorthropGrumman, GD GeneralDynamics, CAE Canadian)</span>
