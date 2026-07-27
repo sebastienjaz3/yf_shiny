@@ -55,8 +55,8 @@ app_ui = ui.page_fluid(
                 choices={
                     "option1": "1.Preferred/Blue",
                     "option2": "2.Fiat CAD",
-                    "option3": "3.Tech",
-                    "option4": "4.ETF",
+                    "option3": "3.ETF",
+                    "option4": "4.Tech",
                     "option5": "5.Retail",
                     "option6": "6.Bank",
                     "option7": "7.Delta Grow",
@@ -178,10 +178,10 @@ def server(input, output, session):
             ui.update_checkbox_group("group_tickers", selected=["GLD", "SPY", "QQQ", "VT", "CAT", "GS", "LLY", "WMT", "COST", "GOOGL"])
         elif option == "option2": # 2.Fiat CAD
             ui.update_checkbox_group("group_tickers", selected=['USDCAD=X', 'EURCAD=X', 'CADUSD=X', 'CADEUR=X'])
-        elif option == "option3": # 3.Tech
-            ui.update_checkbox_group("group_tickers", selected=['TSLA', 'NVDA', 'GOOGL', 'AAPL', 'META', 'AMZN', 'MSFT', 'TSM', 'MRVL', 'PLTR'])
-        elif option == "option4": # 4.ETF
+        elif option == "option3": # 3.ETF
             ui.update_checkbox_group("group_tickers", selected=["GLD", "SPY", "QQQ", "VT", "BLK"])
+        elif option == "option4": # 4.Tech
+            ui.update_checkbox_group("group_tickers", selected=['TSLA', 'NVDA', 'GOOGL', 'AAPL', 'META', 'AMZN', 'MSFT', 'TSM', 'MRVL', 'PLTR'])
         elif option == "option5": # 5.Retail
             ui.update_checkbox_group("group_tickers", selected=['WMT', 'COST', 'TGT', 'BJ', 'KR', 'DG', 'HD'])
         elif option == "option6": # 6.Bank
