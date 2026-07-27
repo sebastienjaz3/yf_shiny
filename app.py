@@ -53,7 +53,7 @@ app_ui = ui.page_fluid(
                 "radio_options", 
                 ui.tags.b("Preset"), 
                 choices={
-                    "option1": "1.Preferred/Blue",
+                    "option1": "1.Preferred",
                     "option2": "2.Fiat CAD",
                     "option3": "3.ETF",
                     "option4": "4.Tech",
