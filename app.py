@@ -13,7 +13,7 @@ ALL_TICKERS = ['CADTHB=X', 'USDTHB=X', 'EURTHB=X', 'USDCAD=X', 'EURCAD=X', 'CADU
                      '^IXIC', '^NDX', 'QQQ', 'QQQM', # NASDAQ
                      '^DJI', # DOW JONES
                      'VT', 'VTI', 'VGT', 'VYM', # VANGUARD
-                     'BLK', 'BX' # BLACKROCK-BLACKSTONE
+                     'BLK', 'BX', # BLACK
                      'LMT', 'NOC', 'GD', 'CAE', # DEFENSE
                      'XOM', 'CVX', 'COP', 'SHEL', 'BP', 'CNQ', # ENERGY
                      'CAT', 'GE', 'BA', 'ETN', 'UNP', # INDUSTRIAL
