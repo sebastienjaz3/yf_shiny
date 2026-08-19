@@ -59,8 +59,8 @@ app_ui = ui.page_fluid(
                     "option4": "4.Tech",
                     "option5": "5.Retail",
                     "option6": "6.Bank",
-                    "option7": "7.Delta Grow",
-                    "option8": "8.Delta Drop",
+                    "option7": "7.Delta Grow (+)",
+                    "option8": "8.Delta Drop (-)",
                     "option9": "9.None"
                 },
                 selected="option1"),
@@ -166,7 +166,7 @@ def server(input, output, session):
     @render.text
     def output_counts():
         perf = ticker_performance()
-        return f"Delta Grow: {len(perf['grow'])} \nDelta Drop: {len(perf['drop'])}"
+        return f"Delta Grow (+): {len(perf['grow'])} \nDelta Drop (-): {len(perf['drop'])}"
       
     # 2. Reactive event observer
     @reactive.Effect
