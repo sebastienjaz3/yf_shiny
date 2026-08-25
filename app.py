@@ -53,15 +53,15 @@ app_ui = ui.page_fluid(
                 "radio_options", 
                 ui.tags.b("Preset"), 
                 choices={
+                    "option0": "0.None",
                     "option1": "1.Preferred (blue)",
-                    "option2": "2.Fiat CAD",
-                    "option3": "3.ETF",
-                    "option4": "4.Tech",
-                    "option5": "5.Retail",
-                    "option6": "6.Bank",
-                    "option7": "7.Delta Grow (+)",
-                    "option8": "8.Delta Drop (-)",
-                    "option9": "9.None"
+                    "option2": "2.Delta Grow (+)",
+                    "option3": "3.Delta Drop (-)",
+                    "option4": "4.Fiat CAD",
+                    "option5": "5.ETF",
+                    "option6": "6.Tech",
+                    "option7": "7.Retail",
+                    "option8": "8.Bank"
                 },
                 selected="option1"),
             #ui.tags.hr(),
@@ -174,27 +174,29 @@ def server(input, output, session):
     def _():
         option = input.radio_options()
         
-        if option == "option1": # 1.Preferred
+        if option == "option0": # 0.None
+            ui.update_checkbox_group("group_tickers", selected=[])
+        elif option == "option1": # 1.Preferred
             ui.update_checkbox_group("group_tickers", selected=["GLD", "SPY", "QQQ", "VT", "CAT", "GS", "LLY", "WMT", "COST", "GOOGL"])
-        elif option == "option2": # 2.Fiat CAD
-            ui.update_checkbox_group("group_tickers", selected=['USDCAD=X', 'EURCAD=X', 'CADUSD=X', 'CADEUR=X'])
-        elif option == "option3": # 3.ETF
-            ui.update_checkbox_group("group_tickers", selected=["GLD", "SPY", "QQQ", "VT", "BLK", "BX"])
-        elif option == "option4": # 4.Tech
-            ui.update_checkbox_group("group_tickers", selected=['TSLA', 'NVDA', 'GOOGL', 'AAPL', 'META', 'AMZN', 'MSFT', 'TSM', 'MRVL', 'PLTR'])
-        elif option == "option5": # 5.Retail
-            ui.update_checkbox_group("group_tickers", selected=['WMT', 'COST', 'TGT', 'BJ', 'KR', 'DG', 'HD'])
-        elif option == "option6": # 6.Bank
-            ui.update_checkbox_group("group_tickers", selected=['JPM', 'BAC', 'C', 'GS', 'WFC', 'RY', 'TD', 'BMO'])
-        elif option in ["option7", "option8"]: # 7.Grow / 8.Drop
+        elif option in ["option2", "option3"]: # 2.Grow 3.Drop
             # Fetch lists computed by ticker_performance calculation
             perf = ticker_performance()
-            if option == "option7":
+            if option == "option2":
                 ui.update_checkbox_group("group_tickers", selected=perf["grow"])
             else:
                 ui.update_checkbox_group("group_tickers", selected=perf["drop"])
-        else: # 9.None
-            ui.update_checkbox_group("group_tickers", selected=[])
+        elif option == "option4": # 4.Fiat CAD
+            ui.update_checkbox_group("group_tickers", selected=['USDCAD=X', 'EURCAD=X', 'CADUSD=X', 'CADEUR=X'])
+        elif option == "option5": # 5.ETF
+            ui.update_checkbox_group("group_tickers", selected=["GLD", "SPY", "QQQ", "VT", "BLK", "BX"])
+        elif option == "option6": # 6.Tech
+            ui.update_checkbox_group("group_tickers", selected=['TSLA', 'NVDA', 'GOOGL', 'AAPL', 'META', 'AMZN', 'MSFT', 'TSM', 'MRVL', 'PLTR'])
+        elif option == "option7": # 7.Retail
+            ui.update_checkbox_group("group_tickers", selected=['WMT', 'COST', 'TGT', 'BJ', 'KR', 'DG', 'HD'])
+        elif option == "option8": # 8.Bank
+            ui.update_checkbox_group("group_tickers", selected=['JPM', 'BAC', 'C', 'GS', 'WFC', 'RY', 'TD', 'BMO'])
+        #else: # 0.None
+            #ui.update_checkbox_group("group_tickers", selected=[])
           
     # 3. data calculation
     @reactive.Calc
